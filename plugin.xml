@@ -28,6 +28,13 @@
 
     <!-- android -->
     <platform name="android">
+        
+        <edit-config file="AndroidManifest.xml" 
+                 target="/manifest/application" 
+                 mode="add">
+        <application android:allowBackup="false"/>
+        </edit-config>
+        
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FabricPlugin">
                 <param name="android-package" value="com.sarriaroman.fabric.FabricPlugin"/>
@@ -43,11 +50,7 @@
             
             <meta-data android:name="io.fabric.ApiKey" android:value="$FABRIC_API_KEY"/>
         </config-file>
-<edit-config file="AndroidManifest.xml" 
-                 target="/manifest/application" 
-                 mode="add">
-        <application android:allowBackup="false"/>
-    </edit-config>
+
         <source-file src="src/android/FabricPlugin.java" target-dir="src/com/sarriaroman/fabric"/>
         <source-file src="src/android/JavaScriptException.java" target-dir="src/com/sarriaroman/fabric"/>
 
