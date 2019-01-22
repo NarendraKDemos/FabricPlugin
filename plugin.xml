@@ -29,12 +29,7 @@
     <!-- android -->
     <platform name="android">
         
-        <edit-config file="AndroidManifest.xml" 
-                 target="/manifest/application" 
-                 mode="add">
-        <application android:allowBackup="false"/>
-        </edit-config>
-        
+                
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="FabricPlugin">
                 <param name="android-package" value="com.sarriaroman.fabric.FabricPlugin"/>
